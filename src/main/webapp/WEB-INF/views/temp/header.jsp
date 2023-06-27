@@ -1,5 +1,6 @@
 <!-- Offcanvas Menu Section Begin -->
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>
@@ -57,18 +58,26 @@
                     <div class="nav-menu">
                         <nav class="mainmenu">
                             <ul>
-                                <li class="active"><a href="/">Home</a></li>
-                                <li><a href="/booking/reservation">Rooms</a></li>
+                                <spring:message code="home" var="home" text=""/>
+                                <spring:message code="rooms" var="rooms" text=""/>
+                                <spring:message code="res" var="res" text=""/>
+                                <spring:message code="mypage" var="mypage" text=""/>
+                                <spring:message code="login" var="login" text=""/>
+                                <spring:message code="logout" var="logout" text=""/>
+                                <li class="active"><a href="/">${home}</a></li>
+                                <li><a href="/booking/reservation">${rooms}</a></li>
                                 <sec:authorize access="isAuthenticated()">
-                                    <li><a href="/pay/paymentList">Reservation</a></li>
-                                    <li><a href="/customer/myPage">MyPage</a></li>
-                                    <li><a href="/customer/logout">Logout</a></li>
+                                    <li><a href="/pay/paymentList">${res}</a></li>
+                                    <li><a href="/customer/myPage">${mypage}</a></li>
+                                    <li><a href="/customer/logout">${logout}</a></li>
                                 </sec:authorize>
                                 <sec:authorize access="!isAuthenticated()">
-                                  <li><a href="/customer/login">Login</a></li>
+                                  <li><a href="/customer/login">${login}</a></li>
                                 </sec:authorize>
-                                <li class="nav-item"><a class="nav-link" href="/?lang_opt=ko">KO</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/?lang_opt=en">EN</a></li>
+                                <spring:message code="ko" var="ko" text=""/>
+                                <spring:message code="en" var="en" text=""/>
+                                <li class="nav-item"><a class="nav-link" href="/?lang_opt=ko">${ko}</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/?lang_opt=en">${en}</a></li>
                             </ul>
 
                         </nav>

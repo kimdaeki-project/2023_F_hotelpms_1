@@ -69,7 +69,7 @@ public class UserController {
         if(obj==null) {
             mv.setViewName("customer/login");
         }else {
-            mv.setViewName("redirect:/");
+            mv.setViewName("redirect:../");
         }
         return mv;
     }
@@ -99,7 +99,7 @@ public class UserController {
         int result = userService.updateUser(userVO);
         log.error(userVO.getPhoneNumber());
 
-        mv.setViewName("redirect:/customer/myPage");
+        mv.setViewName("redirect:./customer/myPage");
 
         //자동 로그인 처리
         String username = userVO.getUsername();
