@@ -42,7 +42,7 @@ IMP.init("imp83363020");
 
 //document.getElementById("requestPay").addEventListener("click", function() {
 function requestPay() {
-    var loggedIn = document.getElementById("loggedInValue").value === "true";
+    let loggedIn = document.getElementById("loggedInValue").value === "true";
 
     if (loggedIn) {
         // 사용자가 로그인되어 있는 경우, requestPay() 함수 실행
@@ -50,8 +50,7 @@ function requestPay() {
         let guestCount = document.getElementById('guestCount').value;
         let checkinDate = document.getElementById('checkinDate').value;
         let checkoutDate = document.getElementById('checkoutDate').value;
-        // var paymentAmount = parseInt( document.getElementById('paymentAmount2').textContent) ;
-
+        let paymentAmount = parseInt(document.getElementById('paymentAmount2').textContent.replace(/,/g, ''));
 
 
         let roomNumber = 604;
@@ -60,7 +59,7 @@ function requestPay() {
         // let checkinDate = '2023-12-12';
         // let checkoutDate = '2023-12-13';
         // let guestCount = 3;
-        let paymentAmount = 10;
+        // let paymentAmount = 10;
         let name = '김진서';
         let phoneNumber = '010-3445-2132';
         let reservationEmail = 'rlawlstj0123@naver.com';
@@ -130,10 +129,6 @@ function requestPay() {
  결제 취소
  ********************************/
 function cancelPayments(reservationNumber,checkinDate,checkoutDate){
-    // let reservationNumber = document.getElementById('reservationNumber').value;
-    // let checkinDate = document.getElementById('checkinDate').value;
-    // let checkoutDate = document.getElementById('checkoutDate').value;
-    // alert(reservationNumber);
     alert("정말로 환불 하시겠습니까?")
     $.ajax({
         type:"POST",
