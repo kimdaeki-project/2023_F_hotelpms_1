@@ -402,10 +402,7 @@ ul, ol {
 	position: relative;
 	z-index: 1;
 }
-.menu-item .nav-menu .mainmenu li.active a:after {
-	opacity: 1;
-}
-.menu-item .nav-menu .mainmenu li:hover>a:after {
+.menu-item .nav-menu .mainmenu li:hover > a:after {
 	opacity: 1;
 }
 .menu-item .nav-menu .mainmenu li:hover .dropdown {
@@ -483,6 +480,7 @@ ul, ol {
 	color: #19191a;
 	cursor: pointer;
 }
+
 .canvas-open {
 	display: none;
 }
@@ -2087,7 +2085,7 @@ ul, ol {
 		position: absolute;
 		left: 0;
 		top: 60px;
-		width: 100px;
+		width: 120px;
 		background: #ffffff;
 		display: block;
 		padding: 10px 15px;
